@@ -26,9 +26,8 @@ Section Breakdown:
 ## Features
 
 - **Deep ELF Analysis** — Section sizes, symbol breakdown, memory regions
-- **CI Integration** — JSON output, exit codes on threshold breach
-- **Size Tracking** — Record sizes at each release, track trends
 - **HTML Reports** — Beautiful treemap visualizations
+- **Compare Binaries** — See what changed between versions
 - **Zero Dependencies** — Single static binary, runs anywhere
 
 ## Installation
@@ -63,64 +62,36 @@ zpectre analyze firmware.elf
 zpectre analyze firmware.elf --html report.html
 ```
 
-### CI Integration
-
-```bash
-# Fail if flash exceeds 64KB or RAM exceeds 16KB
-zpectre analyze firmware.elf --json --max-flash 65536 --max-ram 16384
-```
-
-### Track Size Over Releases
-
-```bash
-# Record size at each release
-zpectre analyze firmware.elf --record v1.0.0
-zpectre analyze firmware.elf --record v1.1.0
-zpectre analyze firmware.elf --record v1.2.0
-
-# View history
-zpectre history
-```
-
 ### Compare Binaries
 
 ```bash
 zpectre compare old.elf new.elf
 ```
 
-## CI Examples
+## Pro Version
 
-### GitHub Actions
+[Zpectre Pro](https://zpectre.dev/pro) unlocks CI integration and advanced features:
+
+- **JSON output** — Machine-readable output for pipelines
+- **Size thresholds** — Fail builds when firmware exceeds limits
+- **History tracking** — Record and view sizes over releases
+- **Trend charts** — Visualize size changes over time
+- **Module breakdown** — See which libraries use the most space
+
+### CI Examples (Pro)
 
 ```yaml
+# GitHub Actions
 - name: Check firmware size
-  run: |
-    zpectre analyze firmware.elf --json --max-flash 65536 > size.json
-
-- name: Upload size report
-  uses: actions/upload-artifact@v3
-  with:
-    name: firmware-size
-    path: size.json
+  run: zpectre analyze firmware.elf --json --max-flash 65536 > size.json
 ```
 
-### GitLab CI
-
 ```yaml
+# GitLab CI
 check-size:
   script:
     - zpectre analyze firmware.elf --max-flash 65536 --max-ram 16384
-  allow_failure: false
 ```
-
-## Pro Version
-
-[Zpectre Pro](https://zpectre.dev/pro) adds:
-
-- **Module grouping** — See which libraries consume the most space
-- **Trend charts** — Visualize size changes over time
-- **Unlimited history** — Track as many releases as you need
-- **Priority support**
 
 One-time purchase, lifetime updates. [Get Pro →](https://zpectre.dev/pro)
 
