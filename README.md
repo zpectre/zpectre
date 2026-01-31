@@ -178,7 +178,7 @@ The HTML report shows:
 
 ## Pro Features
 
-[Zpectre Pro](https://zpectre.dev) unlocks CI integration and advanced features:
+[Zpectre Pro](https://buy.stripe.com/5kQ8wQejK3Ak9LIb41aAw00) unlocks CI integration and advanced features:
 
 ### JSON Output
 
@@ -353,7 +353,7 @@ Zpectre analyzes ELF binaries for any architecture:
 | Module breakdown | — | ✓ |
 | Priority support | — | ✓ |
 
-**Pro is a one-time purchase with lifetime updates.** [Get Pro →](https://zpectre.dev)
+**Pro is a one-time purchase with lifetime updates.** [Get Pro →](https://buy.stripe.com/5kQ8wQejK3Ak9LIb41aAw00)
 
 ---
 
